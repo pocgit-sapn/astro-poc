@@ -15,7 +15,7 @@ default_args={
 @dag(
     default_args=default_args,
     schedule="0 0 * * *",
-    start_date=pendulum.from_format("2024-10-21", "YYYY-MM-DD").in_tz("UTC"),
+    start_date=pendulum.from_format("2024-10-20", "YYYY-MM-DD").in_tz("Australia/Adelaide"),
     catchup=False,
     owner_links={
         "Charmine Azajar (AZR)": "mailto:azr-azajc0@sapowernetworks.onmicrosoft.com",
@@ -24,7 +24,10 @@ default_args={
 )
 def execute_dbt_cloud_poc():
     dbt_cloud_run_job_operator_1 = DbtCloudRunJobOperator(
+        dbt_cloud_conn_id="snowflake_conn_astroproj_poc",
         job_id=25371,
+        account_id=195,
+        timeout=600,
         task_id="dbt_cloud_run_job_operator_1",
     )
 
