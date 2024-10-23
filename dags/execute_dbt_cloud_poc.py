@@ -32,3 +32,4 @@ def execute_dbt_cloud_poc():
     )
 
 dag_obj = execute_dbt_cloud_poc()
+
