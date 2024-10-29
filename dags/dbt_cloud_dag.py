@@ -15,7 +15,7 @@ import pendulum
     },   
  )
 def dbt_cloud_dag()
-    dbt_cloud_list_jobs = DbtCloudListJobsOperator)
+    dbt_cloud_list_jobs = DbtCloudListJobsOperator(
         task_id="dbt_cloud_list_jobs",
     project_id="9157",
  )
