@@ -70,7 +70,7 @@ default_args={
 
 @dag(
     default_args=default_args,
-    schedule=None,
+    schedule="@daily",
     start_date=pendulum.from_format("2024-10-23", "YYYY-MM-DD"),
     catchup=False,
     owner_links={
