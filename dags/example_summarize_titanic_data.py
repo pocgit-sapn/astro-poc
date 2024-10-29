@@ -94,4 +94,3 @@ def example_summarize_titanic_data():
     )
 
 dag_obj = example_summarize_titanic_data()
-
