@@ -19,10 +19,12 @@ import pendulum
 def dbt_cloud_dag():
     dbt_cloud_list_jobs = DbtCloudListJobsOperator(
         task_id="dbt_cloud_list_jobs",
-    project_id="9157",
- )
-   dbt_cloud_run_job = DbtCloudRunJobOperator(
-    task_id=” dbt_cloud_run_job”, job_id=25371
-   )
-     dbt_cloud_list_jobs >> dbt_cloud_run_job
+        project_id="9157",
+     )
+    dbt_cloud_run_job = DbtCloudRunJobOperator(
+      task_id="dbt_cloud_run_job", job_id=25371
+    )
+
+    dbt_cloud_list_jobs >> dbt_cloud_run_job
+    
 dbt_cloud_dag = dbt_cloud_dag()
